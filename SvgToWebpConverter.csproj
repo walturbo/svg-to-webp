@@ -9,6 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.88.8" />
-    <PackageReference Include="SkiaSharp.Svg" Version="2.88.8" />
+    <PackageReference Include="SkiaSharp.Extended.Svg" Version="2.88.8" />
   </ItemGroup>
 </Project>
