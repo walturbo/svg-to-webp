@@ -1,6 +1,6 @@
 # SVG to WebP Converter (Windows 11 x64)
 
-Programma console in **C# / .NET 8** che converte un file SVG in **due file WebP** con risoluzione e qualità configurabili.
+Programma console in **C# / .NET 10** che converte un file SVG in **due file WebP** con risoluzione e qualità configurabili.
 
 ## Perché C#/.NET è una buona scelta
 - Ottimo supporto su Windows 11.
@@ -8,7 +8,7 @@ Programma console in **C# / .NET 8** che converte un file SVG in **due file WebP
 - Librerie stabili per rendering SVG e encoding WebP (SkiaSharp).
 
 ## Requisiti
-- .NET SDK 8.0 (x64)
+- .NET SDK 10.0 (x64)
 - Connessione Internet (oppure mirror NuGet aziendale configurato)
 
 ## Build
@@ -42,7 +42,7 @@ dotnet run -- \
 dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
 ```
 L'eseguibile sarà nella cartella:
-`bin/Release/net8.0/win-x64/publish/`
+`bin/Release/net10.0/win-x64/publish/`
 
 ## Risoluzione errore NU1100 (pacchetti non risolti)
 Se vedi errori come `NU1100: Non è possibile risolvere ...`:
