@@ -11,6 +11,8 @@ Programma console in **C# / .NET 10** che converte un file SVG in **due file Web
 - .NET SDK 10.0 (x64)
 - Connessione Internet (oppure mirror NuGet aziendale configurato)
 
+> Nota dipendenze: il progetto usa `Svg.Skia 3.0.0` e `SkiaSharp 3.116.1` per evitare errori di downgrade NuGet (`NU1605`).
+
 ## Build
 ```bash
 dotnet restore
