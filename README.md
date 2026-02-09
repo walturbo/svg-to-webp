@@ -5,7 +5,7 @@ Programma console in **C# / .NET 10** che converte un file SVG in **due file Web
 ## Perché C#/.NET è una buona scelta
 - Ottimo supporto su Windows 11.
 - Possibilità di pubblicare un eseguibile standalone (`.exe`) per `win-x64`.
-- Librerie stabili per rendering SVG e encoding WebP (`SkiaSharp` + `SkiaSharp.Extended.Svg`).
+- Librerie stabili per rendering SVG e encoding WebP (`SkiaSharp` + `Svg.Skia`).
 
 ## Requisiti
 - .NET SDK 10.0 (x64)
@@ -47,7 +47,7 @@ L'eseguibile sarà nella cartella:
 ## Risoluzione errore NU1100 (pacchetti non risolti)
 Se vedi errori come `NU1100` o `NU1102` sui pacchetti:
 
-0. Verifica di usare il pacchetto corretto per SVG: `SkiaSharp.Extended.Svg` (non `SkiaSharp.Svg` 2.x).
+0. Verifica di usare il pacchetto corretto per SVG: `Svg.Skia` (evita `SkiaSharp.Svg` / `SkiaSharp.Extended.Svg` se non presenti su nuget.org).
 
 1. Verifica che `nuget.org` sia presente:
    ```bash

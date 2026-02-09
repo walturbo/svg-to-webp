@@ -1,5 +1,5 @@
 using SkiaSharp;
-using SkiaSharp.Extended.Svg;
+using Svg.Skia;
 
 if (args.Length == 0 || args.Contains("--help") || args.Contains("-h"))
 {
