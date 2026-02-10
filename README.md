@@ -38,11 +38,11 @@ dotnet run -- \
 - `--width2`, `--height2`: risoluzione del secondo output (default `1024x1024`).
 - `--quality`: qualità comune (0-100) per entrambi i file.
 - `--quality1`, `--quality2`: qualità per singolo output (hanno precedenza su `--quality`).
-- `--lossless`: abilita WebP lossless su entrambi i file (massima fedeltà colore, file più grandi).
-- `--lossless1`, `--lossless2`: abilita WebP lossless solo su un output specifico.
+- `--lossless`: forza qualità WebP 100 su entrambi i file (massima qualità, file più grandi).
+- `--lossless1`, `--lossless2`: forza qualità WebP 100 solo su un output specifico.
 
 ## Colori “sbiaditi”: cosa è stato fatto
-Per ridurre differenze cromatiche rispetto al browser, il rendering usa ora una superficie Skia con **spazio colore sRGB esplicito**. Inoltre puoi usare `--lossless` per minimizzare alterazioni da compressione lossy.
+Per ridurre differenze cromatiche rispetto al browser, il rendering usa ora una superficie Skia con **spazio colore sRGB esplicito**. Inoltre puoi usare `--lossless` per forzare qualità 100 e ridurre alterazioni da compressione lossy.
 
 Esempio consigliato (massima fedeltà):
 ```bash

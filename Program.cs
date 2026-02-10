@@ -69,19 +69,12 @@ static void ConvertSvgToWebp(string inputSvg, string outputWebp, int width, int 
     var offsetY = (height - targetHeight) / 2f;
 
     var matrix = SKMatrix.CreateScaleTranslation(scale, scale, offsetX, offsetY);
-    using var paint = new SKPaint
-    {
-        IsAntialias = true,
-        FilterQuality = SKFilterQuality.High
-    };
-
-    canvas.DrawPicture(picture, ref matrix, paint);
+    canvas.DrawPicture(picture, in matrix);
     canvas.Flush();
 
     using var image = surface.Snapshot();
-    using var data = lossless
-        ? image.Encode(SKEncodedImageFormat.Webp, 100)
-        : image.Encode(new SKWebpEncoderOptions(SKWebpEncoderCompression.Lossy, quality));
+    var effectiveQuality = lossless ? 100 : quality;
+    using var data = image.Encode(SKEncodedImageFormat.Webp, effectiveQuality);
 
     if (data is null)
     {
@@ -190,9 +183,9 @@ static void PrintHelp()
       --quality <0-100>   Qualità comune per entrambi i file
       --quality1 <0-100>  Qualità specifica primo file (precedenza su --quality)
       --quality2 <0-100>  Qualità specifica secondo file (precedenza su --quality)
-      --lossless          Forza WebP lossless su entrambi gli output
-      --lossless1         Forza WebP lossless sul primo output
-      --lossless2         Forza WebP lossless sul secondo output
+      --lossless          Forza qualità WebP 100 su entrambi gli output
+      --lossless1         Forza qualità WebP 100 sul primo output
+      --lossless2         Forza qualità WebP 100 sul secondo output
       --help              Mostra questo aiuto
 
     Esempio:
